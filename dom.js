@@ -107,7 +107,6 @@ function eraseNoteUI(id) {
  * @param {Number} id ID de la nota a modificar.
  */
 function modifyNoteUI(title, content, category, id) {
-    changeNote(id, title, content, category)
     document.getElementById(`noteTitle${id}`).innerHTML = title;
     document.getElementById(`noteContent${id}`).innerHTML = content;
     document.getElementById(`noteCategory${id}`).innerHTML = category;

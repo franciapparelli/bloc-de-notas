@@ -84,7 +84,20 @@ function filterNoteByID(id) {
 }
 
 function changeNote(id, title, content, category) {
-    if (users[filterNoteByID(id)].newChange(title, content, idActiveUser, category)){
+    if (notes[filterNoteByID(id)].newChange(title, content, idActiveUser, category)){
         return id
     } return -1
+}
+
+function changeNoteUI() {
+    let id = getSearchID();
+    let title = getNoteTitle();
+    let content = getNoteContent();
+    let category = getNoteCategory();
+
+    let result = changeNote(id, title, content, category)
+    
+    if(result != -1) {
+        modifyNoteUI(title, content, category, id)
+    }
 }

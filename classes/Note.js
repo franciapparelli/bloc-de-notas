@@ -11,8 +11,11 @@ class Note {
         this.record = [];
     }
 
-    newChange(title, content, users, category) {
-        this.record.push(new Modification(title, content, users, category))
+    newChange(title, content, category) {
+        this.record.push(new Modification(this.users, this.content, this.title, this.category))
+        this.title = title;
+        this.content = content;
+        this.category = category;
         return true
     }
 }
