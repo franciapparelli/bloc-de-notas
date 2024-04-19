@@ -18,4 +18,12 @@ class Note {
         this.category = category;
         return true
     }
+
+    addUser(id) {
+        this.users.push(id)
+    }
+
+    deleteUser(id) {
+        this.users.pop(filterUserByID(this, id))
+    }
 }

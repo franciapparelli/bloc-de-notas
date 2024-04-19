@@ -1,4 +1,4 @@
-let user_id = 1
+let user_id = 2
 
 class User {
     constructor(name, password) {

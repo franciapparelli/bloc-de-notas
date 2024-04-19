@@ -1,6 +1,6 @@
 const notes = []
 const users = []
-let idActiveUser = null
+let idActiveUser = 1
 
 users.push(new User("Franco", "1234"))
 users.push(new User("Joaquin", "5678"))
@@ -75,12 +75,41 @@ function addNewNote(title, content, category) {
 
 function filterNoteByID(id) {
     let i = 0;
+
     while (i < notes.length && notes[i].id != id) {
         i++;
     }
 
     console.log(notes[i])
     return i
+}
+
+function filterNoteByContent(content) {
+    let i = 0;
+
+    if (content.length < 4) { 
+        return -1
+    }
+
+    while (i < notes.length) {
+        if (notes[i].content.includes(content)) {
+            console.log(notes[i])
+        }
+        i++;
+    }
+
+}
+
+function filterUserByID(note, id) {
+    let i = 0;
+
+    while (i < note.users.length && note.users[i].id != id) {
+        i++;
+    }
+
+    console.log(note.users[i])
+    return i
+
 }
 
 function changeNote(id, title, content, category) {
@@ -100,4 +129,13 @@ function changeNoteUI() {
     if(result != -1) {
         modifyNoteUI(title, content, category, id)
     }
+}
+
+function deleteNote(id) {
+    if (notes.pop(filterNoteByID(id))) {
+        eraseNoteUI(id)
+        return id
+    }
+    
+    return -1
 }

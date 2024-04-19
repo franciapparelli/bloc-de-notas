@@ -63,11 +63,11 @@
                     <div class="form-group">
                         <button class="form-check-control btn btn-info" onclick="filterNoteByID(getSearchID())">Ver nota por ID</button>
                         <button class="form-check-control btn btn-success" onclick="changeNoteUI()">Modificar nota por ID</button>
-                        <button class="form-check-control btn btn-danger" onclick="   ">Eliminar nota por ID</button>
+                        <button class="form-check-control btn btn-danger" onclick="deleteNote(getSearchID())">Eliminar nota por ID</button>
                     </div>
                     <div class="form-group">
                         <label for="searchByContent">Buscar por contenido</label>
-                        <input class="form-control" type="text" id="searchByContent" onkeyup="   ">
+                        <input class="form-control" type="text" id="searchByContent" onkeyup="filterNoteByContent(getSearchContent())">
                     </div>
                 </div>
             </div>
