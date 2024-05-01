@@ -24,6 +24,6 @@ class Note {
     }
 
     deleteUser(id) {
-        this.users.pop(filterUserByID(this, id))
+        this.users.slice(filterUserByID(this, id))
     }
 }

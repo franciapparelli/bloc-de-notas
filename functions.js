@@ -132,7 +132,7 @@ function changeNoteUI() {
 }
 
 function deleteNote(id) {
-    if (notes.pop(filterNoteByID(id))) {
+    if (notes.slice(filterNoteByID(id))) {
         eraseNoteUI(id)
         return id
     }
