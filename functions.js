@@ -2,6 +2,8 @@ const notes = []
 const users = []
 let idActiveUser = 1
 
+const myStorage = localStorage;
+
 users.push(new User("Franco", "1234"))
 users.push(new User("Joaquin", "5678"))
 notes.push(new Note("Hacer nota de ejemplo", "Con id, titulo, contenido, persona, usuarios, categoria e historial", [idActiveUser], "TP1"))
@@ -113,6 +115,7 @@ function filterUserByID(note, id) {
 }
 
 function changeNote(id, title, content, category) {
+    myStorage.setItem(`note${id}`, JSON.stringify(notes[filterNoteByID(id)]))
     if (notes[filterNoteByID(id)].newChange(title, content, idActiveUser, category)){
         return id
     } return -1
